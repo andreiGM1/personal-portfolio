@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrei — Full-Stack Web Developer & Arhitect Automatizări AI</title>
+  <meta name="description" content="Dezvolt site-uri web ultra-rapide, aplicații web moderne și automatizări AI care transformă vizitatorii în clienți plătitori. Vezi portofoliul și testează sandbox-ul interactiv!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+  <!-- Navbar -->
+  <nav class="navbar" id="mainNavbar">
+    <div class="container nav-content">
+      <a href="#" class="brand-logo">
+        <span class="logo-name">Andrei<span class="dot">.</span>dev</span>
+      </a>
+      <div class="nav-links">
+        <a href="#video-walkthrough">Video Loom</a>
+        <a href="#portofoliu">Portofoliu</a>
+        <a href="#sandbox">Sandbox Demo</a>
+        <a href="#calculator-roi">Calculator ROI</a>
+        <a href="#estimator">Estimator Buget</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Să Discutăm</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="glow-orb orb-violet"></div>
+    <div class="container hero-content">
+      <div class="badge-pill">👋 Salut! Eu sunt Andrei — Web Developer & AI Solutions Architect</div>
+      <h1 class="hero-title">
+        Construiesc experiențe web <br>
+        <span class="gradient-text">care convertesc și vând.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Transform vizitatorii pasivi în clienți fideli prin platforme de o viteză remarcabilă (&lt;0.8s), design modern Glassmorphic și automatizări inteligente de procese.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#sandbox" class="btn btn-primary btn-lg">🧪 Testează Sandbox-ul Live</a>
+        <a href="#calculator-roi" class="btn btn-outline btn-lg">📈 Calculează ROI-ul Afacerii Tale</a>
+      </div>
+
+      <!-- Loom Video Walkthrough Component -->
+      <section class="loom-showcase-section" id="video-walkthrough">
+        <div class="loom-card">
+          <div class="loom-card-header">
+            <div class="loom-badge">
+              <span class="live-dot"></span>
+              LOOM WALKTHROUGH INTRODUCTIV (90 SECUNDE)
+            </div>
+            <h2 class="loom-title">Cum dublează un site bine structurat vânzările și conversia</h2>
+            <p class="loom-subtitle">Urmărește demonstrația video interactivă în care explic arhitectura tehnică, viteza &lt;0.8s și automatizările de conversie.</p>
+          </div>
+
+          <!-- Video Mock Player Screen -->
+          <div class="loom-player-wrapper">
+            <div class="loom-screen" id="loomScreen">
+              <!-- Animated Screen Content Overlay -->
+              <div class="loom-overlay-content">
+                <div class="loom-author-tag">
+                  <div class="author-bubble">A</div>
+                  <div>
+                    <span class="author-name">Andrei (Web Developer)</span>
+                    <span class="author-sub">Înregistrare Loom HD • 1080p 60fps</span>
+                  </div>
+                </div>
+
+                <div class="loom-slide-message" id="loomSlideMessage">
+                  <div class="slide-badge" id="loomChapterBadge">CAPITOLUL 1: DIAGNOSTICUL</div>
+                  <h3 id="loomChapterHeading">De ce pierd 80% din site-urile din România clienți în primele 5 secunde?</h3>
+                  <p id="loomChapterText">Timp de încărcare peste 3 secunde, navigare greoaie pe mobil și lipsa unui apel la acțiune clar fac ca 4 din 5 vizitatori să închidă pagina fără să cumpere.</p>
+                </div>
+
+                <button type="button" class="loom-big-play-btn" id="loomBigPlayBtn" aria-label="Pornește sau oprește videoul">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+              </div>
+
+              <!-- Visual Live Waveform Simulation -->
+              <div class="loom-audio-wave" id="loomAudioWave">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <!-- Player Controls Bar -->
+            <div class="loom-controls-bar">
+              <button type="button" class="loom-ctrl-btn" id="loomPlayPauseBtn" aria-label="Play / Pauză">
+                <span id="loomPlayIcon">▶</span>
+              </button>
+
+              <div class="loom-timeline-wrap">
+                <input type="range" id="loomScrubber" min="0" max="90" value="0" step="1" aria-label="Progres video">
+                <div class="loom-progress-fill" id="loomProgressFill" style="width: 0%;"></div>
+              </div>
+
+              <span class="loom-time-display" id="loomTimeDisplay">0:00 / 1:30</span>
+
+              <div class="loom-extra-controls">
+                <button type="button" class="loom-pill-btn" id="loomSpeedBtn" title="Viteză redare">1.0x</button>
+                <button type="button" class="loom-pill-btn" id="loomMuteBtn" title="Sunet">🔊</button>
+              </div>
+            </div>
+
+            <!-- Interactive Chapters Selector -->
+            <div class="loom-chapters-bar">
+              <span class="chapters-label">Capitole rapide:</span>
+              <button type="button" class="chapter-chip active" data-time="0">0:00 Diagnostic Conversie</button>
+              <button type="button" class="chapter-chip" data-time="25">0:25 Arhitectură Viteză (&lt;0.8s)</button>
+              <button type="button" class="chapter-chip" data-time="55">0:55 Automatizări WhatsApp & Plăți</button>
+              <button type="button" class="chapter-chip" data-time="75">1:15 Rezultate & Studiu de Caz</button>
+            </div>
+
+            <!-- Key Takeaways -->
+            <div class="loom-takeaways-grid">
+              <div class="takeaway-item">
+                <span class="takeaway-icon">⚡</span>
+                <div>
+                  <strong>Performanță Extremă</strong>
+                  <p>Site-uri optimizate pentru scor 98+ Google PageSpeed pe telefon.</p>
+                </div>
+              </div>
+              <div class="takeaway-item">
+                <span class="takeaway-icon">💬</span>
+                <div>
+                  <strong>Automatizări WhatsApp</strong>
+                  <p>Fiecare formular trimite notificare directă pe WhatsApp pentru răspuns în sub 5 min.</p>
+                </div>
+              </div>
+              <div class="takeaway-item">
+                <span class="takeaway-icon">🔒</span>
+                <div>
+                  <strong>Garanție & Plăți</strong>
+                  <p>Fluxuri de plată securizată escrow, generare contracte PDF și semnătură digitală.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="tech-stack-bar">
+        <span>Stack Tehnologic & Instrumente Avansate:</span>
+        <div class="tech-tags">
+          <span class="tag">Next.js / React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Vanilla CSS & Modern UI</span>
+          <span class="tag">Three.js (WebGL 3D)</span>
+          <span class="tag">Leaflet & GIS Maps</span>
+          <span class="tag">Node.js & Python</span>
+          <span class="tag">Model Context Protocol (MCP)</span>
+          <span class="tag">Cloudflare Pages & Vercel</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Portfolio Showcase Section -->
+  <section class="section portfolio-section" id="portofoliu">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtag">STUDII DE CAZ & PROIECTE</span>
+        <h2>Lucrări Recente din Portofoliu</h2>
+        <p>Aplicații web reale create pentru clienți și startup-uri din România, optimizate pentru conversie maximă.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-tag">RIDESHARING & MOBILITATE</div>
+          <h3>ianenene (Alex Edition)</h3>
+          <p>Platformă națională modernă de carpooling intercity și navetă zilnică cu șoferi verificați, cod PIN escrow, hartă Leaflet cu coridoare DN1/A2 și calculator de emisii CO2.</p>
+          <div class="project-tech"><span>Vanilla JS</span><span>Leaflet Map</span><span>Escrow PIN</span><span>Glassmorphism</span></div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-tag">HEAVY MACHINERY & B2B</div>
+          <h3>RentoUtilaj Marketplace</h3>
+          <p>Platformă digitală de închiriere utilaje grele de construcții cu catalog filtrabil pe județe, generator PDF de contracte oficiale A4, semnătură pe touchscreen și blocare garanție card.</p>
+          <div class="project-tech"><span>jsPDF Canvas</span><span>Stripe Hold Pre-auth</span><span>B2B CRM</span></div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-tag">TURISM & REGIM HOTELIER</div>
+          <h3>Aura Mamaia Nord</h3>
+          <p>Website de prezentare și rezervare directă la 50m de plajă, tur virtual 360° interactiv cu 4 încăperi, sincronizare calendar iCal în două sensuri (Airbnb/Booking) și cod Yale Smart Lock.</p>
+          <div class="project-tech"><span>Tur Virtual 360°</span><span>Two-Way iCal</span><span>Guest Guidebook</span></div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div class="project-tag">INSTRUMENTE INTERACTIVE & 3D</div>
+          <h3>LayerByLayer Studio</h3>
+          <p>Platformă WebGL de printare 3D cu Three.js: încărcare fișiere STL în browser, calcul matematic exact al volumului net în cm³, masă filament, estimare cost și selector de demo-uri.</p>
+          <div class="project-tech"><span>Three.js WebGL</span><span>Signed Tetrahedron STL</span><span>Cost Engine</span></div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card">
+          <div class="project-tag">E-COMMERCE & BEAUTY</div>
+          <h3>BrowLash™ Cosmetics</h3>
+          <p>Landing page de mare conversie cu slider interactiv Before/After 28 zile, quiz de diagnosticare clinică a sprâncenelor și selector integrat pentru peste 25 de lockere Sameday Easybox.</p>
+          <div class="project-tech"><span>Before/After Slider</span><span>Clinical Quiz</span><span>Sameday Easybox</span></div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card">
+          <div class="project-tag">SERVICII LOCALE & PEISAGISTICĂ</div>
+          <h3>Mangeac Gazon</h3>
+          <p>Platformă pentru servicii profesionale de gazon cu instrument satelitar de măsurare curți în mp și perimetru (Pipera, Otopeni, Corbeanca) plus sistem de abonamente sezoniere.</p>
+          <div class="project-tech"><span>Satelit Esri Leaflet</span><span>Poligon Geodezic mp</span><span>Abonamente Recurente</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Sandbox Section -->
+  <section class="section sandbox-section" id="sandbox">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtag">EXPERIENȚĂ LIVE ÎN BROWSER</span>
+        <h2>🧪 Sandbox Demo Interactiv</h2>
+        <p>Testează mecanismele interactive din fiecare proiect direct în acest demo sandbox. Alege o categorie și pornește simulatorul!</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="sandbox-tabs">
+        <button type="button" class="sandbox-tab-btn active" data-category="all">Toate Proiectele (6)</button>
+        <button type="button" class="sandbox-tab-btn" data-category="webapps">Web Apps & Mobilitate</button>
+        <button type="button" class="sandbox-tab-btn" data-category="b2b">E-Commerce & B2B</button>
+        <button type="button" class="sandbox-tab-btn" data-category="interactive">Instrumente 3D & Satelit</button>
+      </div>
+
+      <!-- Sandbox Cards Grid -->
+      <div class="sandbox-grid" id="sandboxGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Client ROI & Break-Even Calculator Section -->
+  <section class="section roi-section" id="calculator-roi">
+    <div class="container">
+      <div class="roi-card">
+        <div class="section-header">
+          <span class="subtag">RENTABILITATEA INVESTIȚIEI</span>
+          <h2>📈 Calculator ROI & Creștere a Vânzărilor</h2>
+          <p>Vezi impactul matematic al optimizării ratei de conversie și vitezei de încărcare asupra veniturilor afacerii tale.</p>
+        </div>
+
+        <div class="roi-calculator-body">
+          <!-- Sliders Column -->
+          <div class="roi-sliders-col">
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="roiVisitorsRange">Vizitatori Lunari pe Site</label>
+                <span class="slider-val-badge" id="roiVisitorsDisplay">5.000 vizitatori</span>
+              </div>
+              <input type="range" id="roiVisitorsRange" min="500" max="30000" step="500" value="5000">
+              <span class="slider-hint">Numărul de oameni care îți vizitează site-ul în fiecare lună</span>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="roiConversionRange">Rata Actuală de Conversie</label>
+                <span class="slider-val-badge" id="roiConversionDisplay">1.2 %</span>
+              </div>
+              <input type="range" id="roiConversionRange" min="0.2" max="5.0" step="0.1" value="1.2">
+              <span class="slider-hint">Procentul de vizitatori care plasează o comandă sau trimit formular</span>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="roiOrderValRange">Valoarea Medie a Comenzii (AOV)</label>
+                <span class="slider-val-badge" id="roiOrderValDisplay">250 RON</span>
+              </div>
+              <input type="range" id="roiOrderValRange" min="50" max="3000" step="25" value="250">
+              <span class="slider-hint">Venitul mediu adus de un client per tranzacție</span>
+            </div>
+          </div>
+
+          <!-- Comparison Results Column -->
+          <div class="roi-results-col">
+            <div class="roi-comparison-grid">
+              <!-- Current State -->
+              <div class="roi-box current-box">
+                <span class="roi-box-label">Performanță Actuală</span>
+                <div class="roi-box-metric" id="roiCurrentRevenue">15.000 RON</div>
+                <div class="roi-box-sub" id="roiCurrentOrders">~60 comenzi / lună</div>
+                <span class="roi-tag-muted">Fără optimizare viteză</span>
+              </div>
+
+              <!-- With Andrei.Dev -->
+              <div class="roi-box optimized-box">
+                <div class="opt-badge">DUPĂ OPTIMIZARE ANDREI.DEV</div>
+                <span class="roi-box-label">Performanță Estimată (+1.8% Conv.)</span>
+                <div class="roi-box-metric highlight" id="roiOptimizedRevenue">37.500 RON</div>
+                <div class="roi-box-sub" id="roiOptimizedOrders">~150 comenzi / lună (+90 clienți)</div>
+                <span class="roi-tag-success">Viteză &lt;0.8s & UX Persuasiv</span>
+              </div>
+            </div>
+
+            <!-- Net Difference & Break-Even Metric -->
+            <div class="roi-net-benefit-card">
+              <div class="net-metric-item">
+                <span class="net-label">Venit Suplimentar Net Lunar:</span>
+                <span class="net-value" id="roiNetGain">+22.500 RON / lună</span>
+              </div>
+              <div class="net-metric-item">
+                <span class="net-label">Timp Estimare Amortizare Investiție:</span>
+                <span class="net-value" id="roiPaybackWeeks">~ 1.8 săptămâni</span>
+              </div>
+              <div class="net-metric-item">
+                <span class="net-label">ROI Estimativ Anual (12 Luni):</span>
+                <span class="net-value" id="roiAnnualPercent">+ 720 %</span>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block" id="applyRoiToContactBtn" style="margin-top: 14px;">
+                🚀 Aplică Acest Scenariu la Solicitarea Mea
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Cost Estimator -->
+  <section class="section estimator-section" id="estimator">
+    <div class="container">
+      <div class="estimator-card">
+        <div class="section-header">
+          <span class="subtag">ESTIMARE INSTANTĂ</span>
+          <h2>Cât Costă Proiectul Tău Web?</h2>
+          <p>Configurează cerințele tale pentru a vedea o estimare transparentă de timp și buget.</p>
+        </div>
+
+        <div class="calc-options-grid">
+          <div class="form-group">
+            <label for="projType">Tipul Proiectului</label>
+            <select id="projType">
+              <option value="1500" data-days="5">Landing Page de Prezentare (5 zile) — 1.500 RON</option>
+              <option value="2800" data-days="10" selected>Site Complet Afacere (5-8 pagini, 10 zile) — 2.800 RON</option>
+              <option value="4200" data-days="15">Magazin Online E-Commerce (Plăți card, 15 zile) — 4.200 RON</option>
+              <option value="5500" data-days="20">Aplicație Web Personalizată / SaaS (20 zile) — 5.500 RON</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="projDesign">Design & Grafică</label>
+            <select id="projDesign">
+              <option value="0">Design Modern pe bază de Design System existent — Inclus</option>
+              <option value="800">Branding Complet (Logo vector, paletă culori, fonturi) — +800 RON</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Optimizări & Integrări Avansate</label>
+            <div class="checkbox-list">
+              <label for="optSEO"><input type="checkbox" id="optSEO" checked aria-label="SEO Tehnic și Google Analytics"> 🚀 SEO Tehnic & Google Analytics (+350 RON)</label>
+              <label for="optWhatsApp"><input type="checkbox" id="optWhatsApp" checked aria-label="Notificări automate WhatsApp"> 💬 Notificări Automate WhatsApp (+250 RON)</label>
+              <label for="optSpeed"><input type="checkbox" id="optSpeed" checked aria-label="Viteză 95+ pe Google PageSpeed"> ⚡ Viteză 95+ pe Google PageSpeed (+300 RON)</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="estimator-result">
+          <div>
+            <span class="res-label">Timp de Livrare Estimat:</span>
+            <strong id="timeDaysVal">10 Zile Lucrătoare</strong>
+          </div>
+          <div>
+            <span class="res-label">Investiție Estimată:</span>
+            <strong class="price-strong" id="priceTotalVal">3.700 RON</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Hai să Dăm Viață Proiectului Tău!</h2>
+        <p>Programează o discuție gratuită de 15 minute pentru a analiza ideea ta.</p>
+        <form id="portfolioContactForm" class="contact-form">
+          <div class="form-grid-2">
+            <div>
+              <label for="devCustName" style="font-size: 0.85rem; color: #94a3b8; display: block; margin-bottom: 6px; text-align: left;">Numele tău</label>
+              <input type="text" id="devCustName" placeholder="Ex: Andrei Popescu" required>
+            </div>
+            <div>
+              <label for="devCustPhone" style="font-size: 0.85rem; color: #94a3b8; display: block; margin-bottom: 6px; text-align: left;">Telefon / WhatsApp</label>
+              <input type="tel" id="devCustPhone" placeholder="Ex: 0722 000 000" required>
+            </div>
+          </div>
+          <div style="margin-top: 14px;">
+            <label for="devCustEmail" style="font-size: 0.85rem; color: #94a3b8; display: block; margin-bottom: 6px; text-align: left;">Adresă de Email</label>
+            <input type="email" id="devCustEmail" placeholder="contact@afacere.ro" required>
+          </div>
+          <div style="margin-top: 14px;">
+            <label for="devCustMessage" style="font-size: 0.85rem; color: #94a3b8; display: block; margin-bottom: 6px; text-align: left;">Detalii Proiect & Obiective</label>
+            <textarea id="devCustMessage" rows="4" placeholder="Spune-mi pe scurt despre proiectul tău..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top: 16px;">Trimite Mesajul Direct</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Sandbox Modal -->
+  <div class="sandbox-modal-backdrop" id="sandboxModal">
+    <div class="sandbox-modal-card">
+      <button class="modal-close-btn" id="closeSandboxModalBtn" aria-label="Închide Sandbox">&times;</button>
+      <div id="sandboxModalContent">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Andrei.Dev. Toate drepturile rezervate. Dezvoltat cu viteză &lt;0.8s, arhitectură modernă și pasiune pentru conversie.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
